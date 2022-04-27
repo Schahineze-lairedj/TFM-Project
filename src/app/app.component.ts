@@ -13,11 +13,6 @@ export class AppComponent {
   title = 'DuenyoFront';
 
 
-  constructor( private dialog :MatDialog) { }
- openDialog() {
-    this.dialog.open(DialogComponent, {
-      width : '30%'
-    });
-  }
- 
+  constructor( ) { }
+
 }
