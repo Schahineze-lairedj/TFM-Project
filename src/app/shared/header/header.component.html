@@ -11,17 +11,16 @@
 
     <span class="example-spacer"></span>
     <div fxShow="true" fxHide.lt-md="true">
-      <a mat-button routerLink="/about-us">Empresa</a>
-      <a mat-button routerLink="/prices">Negocios</a>
-      <a mat-button routerLink="/start-page">Empleados</a>
-      <a mat-button routerLink="/offer">Mesas</a>
-      <a mat-button routerLink="/offer">Pedidos</a>
-      <a mat-button routerLink="/offer">Cajas</a>
-      <a mat-button routerLink="/offer">Proveedores</a>
-      <a mat-button routerLink="/offer">Inventarios</a>
-      <a mat-button routerLink="/contact">Contacto</a>
+      <a mat-button routerLink="negocios">Negocios</a>
+      <a mat-button routerLink="empleados">Empleados</a>
+      <a mat-button routerLink="mesas">Mesas</a>
+      <a mat-button routerLink="pedidos">Pedidos</a>
+      <a mat-button routerLink="cajas">Cajas</a>
+      <a mat-button routerLink="proveedores">Proveedores</a>
+      <a mat-button routerLink="inventarios">Inventarios</a>
+
       <button mat-button [matMenuTriggerFor]="testMenu">
-        Click Me!
+        Login
       </button>
       <mat-menu #testMenu="matMenu" xPosition="before">
         <button mat-menu-item>Menu Item 1</button>
