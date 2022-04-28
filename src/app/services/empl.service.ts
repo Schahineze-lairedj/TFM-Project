@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EmplService {
-
   constructor( private http : HttpClient) { }
-
 
   postEmpleado(data : any){
     return this.http.post<any>("http://localhost:3000/empleadoList/",data);
@@ -18,9 +16,7 @@ export class EmplService {
   }
 
   putEmpleado(data:any, id : number){
-
     return this.http.put<any>("http://localhost:3000/empleadoList/"+id,data);
-
   }
 
   deleteEmpleado(id:number){

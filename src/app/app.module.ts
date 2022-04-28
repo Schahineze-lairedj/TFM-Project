@@ -30,6 +30,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { NegociosComponent } from './negocios/negocios.component';
+import { NegocioComponent } from './negocio/negocio.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
+import { MesasComponent } from './mesas/mesas.component';
+import { MesaComponent } from './mesa/mesa.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { CajasComponent } from './cajas/cajas.component';
+import { CajaComponent } from './caja/caja.component';
+import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { ProveedorComponent } from './proveedor/proveedor.component';
+import { InventariosComponent } from './inventarios/inventarios.component';
+import { InventarioComponent } from './inventario/inventario.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +53,19 @@ import { FooterComponent } from './shared/footer/footer.component';
     DialogComponent,
     HeaderComponent,
     FooterComponent,
+    NegociosComponent,
+    NegocioComponent,
+    EmpleadoComponent,
+    MesasComponent,
+    MesaComponent,
+    PedidosComponent,
+    PedidoComponent,
+    CajasComponent,
+    CajaComponent,
+    ProveedoresComponent,
+    ProveedorComponent,
+    InventariosComponent,
+    InventarioComponent,
 
   ],
   imports: [

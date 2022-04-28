@@ -16,8 +16,8 @@ export class DialogComponent implements OnInit {
 
   actionBtn : string ="Guardar";
 
-  constructor(private formBuilder : FormBuilder , 
-    private emp : EmplService, 
+  constructor(private formBuilder : FormBuilder ,
+    private emp : EmplService,
     @Inject(MAT_DIALOG_DATA) public editData : any,
     private dialogRef : MatDialogRef<DialogComponent>) { }
 
@@ -68,10 +68,10 @@ export class DialogComponent implements OnInit {
 
   updateEmpleado(){
     this.emp.putEmpleado(this.empleadoForm.value,this.editData.id)
-   
+
     .subscribe({
       next : (res)=>{
-        alert("Empleado modificado con exito");
+        alert("Empleado modificado con éxito");
       this.empleadoForm.reset
       this.dialogRef.close('update');
       },
@@ -81,5 +81,5 @@ export class DialogComponent implements OnInit {
     })
   }
 
-  
+
 }
