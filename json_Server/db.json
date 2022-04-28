@@ -1,20 +1,16 @@
 {
-  "empleadoList": [
-    {
-      "nombre": "chahi",
-      "apellido": "lairedj",
-      "telefono": "63698566465",
-      "id": 2
+    "empleadoList": [{
+        "nombre": "chahi",
+        "apellido": "lairedj",
+        "telefono": "63698566465",
+        "id": 2
+    }],
+    "comments": [{
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+    }],
+    "profile": {
+        "name": "typicode"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
 }
