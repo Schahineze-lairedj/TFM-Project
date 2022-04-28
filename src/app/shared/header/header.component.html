@@ -1,33 +1,68 @@
 
-  <mat-toolbar color="primary">
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>supervised_user_circle</mat-icon>
+  <mat-toolbar fxLayout="row" >
+
+    <span fxFlex>
+        <button class="toolbar-main-btn" (click)="goHome()"
+          mat-icon-button
+          aria-label="icon-button with menu icon">
+        <span class="toolbar-main-btn">eCarta Admin</span>
+        </button>
+    </span>
+    <button mat-button *ngFor="let item of menuItems"
+        [fxShow]="item.showOnDesktop"
+        routerLink={{item.link}}
+        [fxShow.xs]="item.showOnMobile"
+        [fxShow.sm]="item.showOnTablet">
+        <mat-icon class="mr">{{item.icon}}</mat-icon>
+        {{item.label}}
     </button>
-    <span>Restaurant Admin</span>
+    <ng-container>
+        <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #dropMenu="matMenu">
+            <ng-container *ngFor="let item of menuItems">
+                <div [fxShow]="!item.showOnDesktop"
+                     [fxShow.sm]="!item.showOnTablet"
+                     [fxShow.xs]="!item.showOnMobile">
+                    <button mat-menu-item>
+                        <mat-icon class="mr">{{item.icon}}</mat-icon>
+                        {{item.label}}
+                    </button>
+                    <mat-divider></mat-divider>
+                </div>
+            </ng-container>
+        </mat-menu>
+    </ng-container>
+</mat-toolbar>
+  <!-- <mat-toolbar >
+
+
 
     <span class="example-spacer"></span>
-    <div fxShow="true" fxHide.lt-md="true">
+    <div >
       <a mat-button routerLink="negocios">Negocios</a>
       <a mat-button routerLink="empleados">Empleados</a>
-      <a mat-button routerLink="mesas">Mesas</a>
       <a mat-button routerLink="pedidos">Pedidos</a>
       <a mat-button routerLink="cajas">Cajas</a>
-      <a mat-button routerLink="proveedores">Proveedores</a>
-      <a mat-button routerLink="inventarios">Inventarios</a>
 
       <button mat-button [matMenuTriggerFor]="testMenu">
-        Login
+        Insumos
       </button>
       <mat-menu #testMenu="matMenu" xPosition="before">
-        <button mat-menu-item>Menu Item 1</button>
-        <button mat-menu-item>Menu Item 2</button>
-        <button mat-menu-item>Menu Item 3</button>
+        <button mat-menu-item routerLink="mesas">Mesas</button>
+        <button mat-menu-item routerLink="inventarios">Inventarios</button>
+        <button mat-menu-item routerLink="proveedores">Proveedores</button>
       </mat-menu>
+
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>supervised_user_circle</mat-icon>
+      </button>
     </div>
   </mat-toolbar>
-  <mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav-container fxFlexFill class="example-container"> -->
 

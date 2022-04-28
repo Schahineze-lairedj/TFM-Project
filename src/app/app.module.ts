@@ -43,6 +43,8 @@ import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { InventariosComponent } from './inventarios/inventarios.component';
 import { InventarioComponent } from './inventario/inventario.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,8 @@ import { InventarioComponent } from './inventario/inventario.component';
 
   ],
   imports: [
+    FlexLayoutModule,
+    MatDividerModule,
     MatSidenavModule,
     MatMenuModule,
     BrowserModule,
