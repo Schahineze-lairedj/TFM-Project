@@ -20,6 +20,14 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
   menuItems: MenuItem[] = [
     {
+      label: 'Estadísticas',
+      icon: 'bar_chart',
+      link: 'estadisticas',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
       label: 'Negocios',
       icon: 'business',
       link: 'negocios',
@@ -37,7 +45,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       label: 'Pedidos',
-      icon: 'restaurant_menu',
+      icon: 'restaurant_menu_outline',
       link: 'pedidos',
       showOnMobile: false,
       showOnTablet: false,
@@ -45,7 +53,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       label: 'Cajas',
-      icon: 'attach_money',
+      icon: 'attach_money_outline',
       link: 'cajas',
       showOnMobile: false,
       showOnTablet: false,
@@ -53,7 +61,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       label: 'Mesas',
-      icon: 'table_chart',
+      icon: 'table_chart_outline',
       link: 'mesas',
       showOnMobile: false,
       showOnTablet: false,
@@ -61,7 +69,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       label: 'Inventarios',
-      icon: 'notes',
+      icon: 'notes_outline',
       link: 'inventarios',
       showOnMobile: false,
       showOnTablet: false,
@@ -69,7 +77,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       label: 'Proveedores',
-      icon: 'group_work',
+      icon: 'group_work_outline',
       link: 'proveedores',
       showOnMobile: false,
       showOnTablet: false,
@@ -77,7 +85,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       label: '',
-      icon: 'supervised_user_circle',
+      icon: 'supervised_user_circle_outline',
       link: 'login',
       showOnMobile: true,
       showOnTablet: true,

@@ -15,9 +15,27 @@ import { PedidoComponent } from './pedido/pedido.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
+import { BarChartComponent } from './stats-charts/bar-chart/bar-chart.component';
+import { DoughnutChartComponent } from './stats-charts/doughnut-chart/doughnut-chart.component';
+import { LineChartComponent } from './stats-charts/line-chart/line-chart.component';
+import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.component';
+import { StatsComponent } from './statistics/panel/stats.component';
 
 const routes: Routes = [
-{path:'',component:NegociosComponent},
+{path:'',component:StatsComponent},
+{path:'estadisticas',component:StatsComponent},
+{
+  path: 'estadisticas', component: StatsComponent,
+  children: [
+    {path:'line-chart',component:LineChartComponent},
+    {path:'bar-chart',component:BarChartComponent},
+    {path:'doughnut-chart',component:DoughnutChartComponent},
+    {path:'radar-chart',component:RadarChartComponent},
+    {path:'bubble-chart',component:BubbleChartComponent},
+  ]
+},
+
 {path:'negocios',component:NegociosComponent},
 {path:'negocio',component:NegocioComponent},
 {path:'empleados',component:EmpleadosComponent},

@@ -45,12 +45,17 @@ import { InventariosComponent } from './inventarios/inventarios.component';
 import { InventarioComponent } from './inventario/inventario.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { StatsComponent } from './statistics/panel/stats.component';
+import { LineChartComponent } from './stats-charts/line-chart/line-chart.component';
+import { BarChartComponent } from './stats-charts/bar-chart/bar-chart.component';
+import { DoughnutChartComponent } from './stats-charts/doughnut-chart/doughnut-chart.component';
+import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.component';
+import { ChartsModule } from 'ng2-charts';
+import { StatisticsModule } from './statistics/statistics.module';
+import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
-
-
     EmpleadosComponent,
     DialogComponent,
     HeaderComponent,
@@ -68,6 +73,8 @@ import { MatDividerModule } from '@angular/material/divider';
     ProveedorComponent,
     InventariosComponent,
     InventarioComponent,
+
+
 
   ],
   imports: [
@@ -93,7 +100,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatTableModule,
     //MatTableDataSource,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+
+    StatisticsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
