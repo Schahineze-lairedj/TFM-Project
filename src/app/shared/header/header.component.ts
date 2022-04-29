@@ -81,7 +81,7 @@ export class HeaderComponent implements OnInit {
       link: 'proveedores',
       showOnMobile: false,
       showOnTablet: false,
-      showOnDesktop: false
+      showOnDesktop: false,
     },
     {
       label: '',

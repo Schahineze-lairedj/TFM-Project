@@ -21,6 +21,8 @@ import { DoughnutChartComponent } from './stats-charts/doughnut-chart/doughnut-c
 import { LineChartComponent } from './stats-charts/line-chart/line-chart.component';
 import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.component';
 import { StatsComponent } from './statistics/panel/stats.component';
+import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveedor-ingredientes.component';
+import { ProveedorServiciosComponent } from './proveedor-servicios/proveedor-servicios.component';
 
 const routes: Routes = [
 {path:'',redirectTo: 'estadisticas', pathMatch: 'full'},
@@ -34,6 +36,7 @@ const routes: Routes = [
     {path:'doughnut-chart',component:DoughnutChartComponent},
     {path:'radar-chart',component:RadarChartComponent},
     {path:'bubble-chart',component:BubbleChartComponent},
+
   ]
 },
 
@@ -51,7 +54,9 @@ const routes: Routes = [
 {path:'proveedor',component:ProveedorComponent},
 {path:'inventarios',component:InventariosComponent},
 {path:'inventario',component:InventarioComponent},
-{path:'dialog',component:DialogComponent}
+{path:'dialog',component:DialogComponent},
+{path:'proveedor-ingredientes',component:ProveedorIngredientesComponent},
+{path:'proveedor-servicios',component:ProveedorServiciosComponent},
 ];
 
 @NgModule({

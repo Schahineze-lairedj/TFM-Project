@@ -24,6 +24,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
 
+
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -53,6 +54,8 @@ import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.comp
 import { ChartsModule } from 'ng2-charts';
 import { StatisticsModule } from './statistics/statistics.module';
 import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
+import { ProveedorServiciosComponent } from './proveedor-servicios/proveedor-servicios.component';
+import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveedor-ingredientes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +76,8 @@ import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.c
     ProveedorComponent,
     InventariosComponent,
     InventarioComponent,
+    ProveedorServiciosComponent,
+    ProveedorIngredientesComponent,
 
 
 
