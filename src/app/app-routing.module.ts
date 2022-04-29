@@ -57,6 +57,7 @@ const routes: Routes = [
 {path:'dialog',component:DialogComponent},
 {path:'proveedor-ingredientes',component:ProveedorIngredientesComponent},
 {path:'proveedor-servicios',component:ProveedorServiciosComponent},
+{path: 'negocio/:id',component: NegocioComponent},
 ];
 
 @NgModule({

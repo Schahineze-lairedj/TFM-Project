@@ -54,8 +54,12 @@ import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.comp
 import { ChartsModule } from 'ng2-charts';
 import { StatisticsModule } from './statistics/statistics.module';
 import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
+<<<<<<< HEAD
 import { ProveedorServiciosComponent } from './proveedor-servicios/proveedor-servicios.component';
 import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveedor-ingredientes.component';
+=======
+import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.component';
+>>>>>>> 46b5706575ba8a4e7c95cfb5caa21400c3fe0469
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +82,7 @@ import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveed
     InventarioComponent,
     ProveedorServiciosComponent,
     ProveedorIngredientesComponent,
+    DialogNegocioComponent,
 
 
 

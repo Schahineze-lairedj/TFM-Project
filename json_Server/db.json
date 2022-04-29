@@ -10,4 +10,38 @@
   "profile": {
     "name": "typicode"
   }
+  "empleadoList": [
+    {
+      "nombre": "chahi",
+      "apellido": "lairedj",
+      "telefono": "63698566465",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "negocioList": [
+    {
+      "nombrerest": "El Buen Comer",
+      "direccionrest": "Calle Mayor, 8, 03002 Alicante España",
+      "telefonorest": "611209603",
+      "tipo": "Restaurante",
+      "id": 2
+    },
+    {
+      "nombrerest": "Bar Mallorca",
+      "direccionrest": "Calle Mallorca, 03500 Benidorm España",
+      "telefonorest": "611209603",
+      "tipo": "Bar",
+      "id": 3
+    }
+  ]
 }
