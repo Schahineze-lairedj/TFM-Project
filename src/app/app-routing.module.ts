@@ -23,11 +23,12 @@ import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.comp
 import { StatsComponent } from './statistics/panel/stats.component';
 
 const routes: Routes = [
-{path:'',component:StatsComponent},
+{path:'',redirectTo: 'estadisticas', pathMatch: 'full'},
 {path:'estadisticas',component:StatsComponent},
 {
   path: 'estadisticas', component: StatsComponent,
   children: [
+    {path:'', redirectTo: 'line-chart', pathMatch: 'full'},
     {path:'line-chart',component:LineChartComponent},
     {path:'bar-chart',component:BarChartComponent},
     {path:'doughnut-chart',component:DoughnutChartComponent},
