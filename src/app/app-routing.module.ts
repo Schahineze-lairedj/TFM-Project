@@ -50,7 +50,8 @@ const routes: Routes = [
 {path:'proveedor',component:ProveedorComponent},
 {path:'inventarios',component:InventariosComponent},
 {path:'inventario',component:InventarioComponent},
-{path:'dialog',component:DialogComponent}
+{path:'dialog',component:DialogComponent},
+{path: 'negocio/:id',component: NegocioComponent},
 ];
 
 @NgModule({

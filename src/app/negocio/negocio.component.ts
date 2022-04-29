@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NegocioService } from '../services/negocio.service';
 
 @Component({
   selector: 'app-negocio',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./negocio.component.sass']
 })
 export class NegocioComponent implements OnInit {
+  public negocio : any ;
 
-  constructor() { }
+  constructor(
+    protected route: ActivatedRoute,
+protected negociosService: NegocioService) { 
+   
+  }
 
   ngOnInit(): void {
   }

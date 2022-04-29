@@ -53,6 +53,7 @@ import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.comp
 import { ChartsModule } from 'ng2-charts';
 import { StatisticsModule } from './statistics/statistics.module';
 import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
+import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +74,7 @@ import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.c
     ProveedorComponent,
     InventariosComponent,
     InventarioComponent,
+    DialogNegocioComponent,
 
 
 
