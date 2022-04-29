@@ -57,6 +57,7 @@ import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.c
 import { ProveedorServiciosComponent } from './proveedor-servicios/proveedor-servicios.component';
 import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveedor-ingredientes.component';
 import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.component';
+import { DialogMComponent } from './dialog-m/dialog-m.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +81,7 @@ import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.componen
     ProveedorServiciosComponent,
     ProveedorIngredientesComponent,
     DialogNegocioComponent,
+    DialogMComponent,
 
 
 

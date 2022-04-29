@@ -12,7 +12,7 @@ export class DialogComponent implements OnInit {
 
   rolList=["Encargado","Cajero","Cocinero","Camarero"]
 
-  empleadoForm ! : FormGroup;
+  empleadoForm !: FormGroup;
 
   actionBtn : string ="Guardar";
 
@@ -30,6 +30,7 @@ export class DialogComponent implements OnInit {
       telefono: ['',Validators.required],
        rol: ['',Validators.required],
 
+
     });
 
     //console.log(this.editData);
@@ -43,7 +44,7 @@ export class DialogComponent implements OnInit {
   }
 
   addEmpleado(){
-    //console.log(this.empleadoForm.value);
+    console.log(this.empleadoForm.value);
 
     if(!this.editData){
       if(this.empleadoForm.valid){
