@@ -1,49 +1,46 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
-import { EmplService } from '../services/empl.service';
+import { Router } from '@angular/router';
+
 
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-
+import { NegocioService } from 'src/app/services/negocio.service';
+import { DialogNegocioComponent } from '../negocio-dialog/dialog-negocio.component';
 
 @Component({
-  selector: 'app-empleados',
-  templateUrl: './empleados.component.html',
-  styleUrls: ['./empleados.component.sass']
+  selector: 'app-negocios',
+  templateUrl: './negocios.component.html',
+  styleUrls: ['./negocios.component.sass']
 })
-export class EmpleadosComponent implements OnInit {
+export class NegociosComponent implements OnInit {
 
-
-  displayedColumns: string[] = ['nombre', 'apellido', 'telefono', 'rol','acciones'];
+  displayedColumns: string[] = ['nombrerest', 'direccionrest', 'telefonorest', 'tipo','acciones'];
   dataSource!: MatTableDataSource<any>;
-
-
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor( private dialog :MatDialog, private emp : EmplService) { }
+  constructor(private dialog :MatDialog, private neg : NegocioService, private router : Router) { }
 
   ngOnInit(): void {
-
-    this.getAllEmpleados();
+    this.getAllNegocios();
   }
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
+    this.dialog.open(DialogNegocioComponent, {
       width : '30%'
     }).afterClosed().subscribe(val=>{
       if(val == 'Guardar'){
-        this.getAllEmpleados();
+        this.getAllNegocios();
       }
     })
   }
 
-  getAllEmpleados(){
+  getAllNegocios(){
 
-    this.emp.getEmpleado()
+    this.neg.getNegocio()
     .subscribe({
       next :(res)=>{
        // console.log(res);
@@ -59,23 +56,23 @@ export class EmpleadosComponent implements OnInit {
 
   }
 
-  editEmpleado(row : any){
-    this.dialog.open(DialogComponent,{
+  editNegocio(row : any){
+    this.dialog.open(DialogNegocioComponent,{
       width : '30%',
       data:row
     }).afterClosed().subscribe(val=>{
       if(val ==='update'){
-        this.getAllEmpleados();
+        this.getAllNegocios();
       }
     })
   }
 
-  deleteEmpleado(id:number){
+  deleteNegocio(id:number){
 
-    this.emp.deleteEmpleado(id)
+    this.neg.deleteNegocio(id)
     .subscribe({
       next:(res)=>{
-        alert("Empleado eliminado")
+        alert("Negocio eliminado")
       },error:()=>{
 
         alert("error")
@@ -94,6 +91,10 @@ export class EmpleadosComponent implements OnInit {
     }
   }
 
-
+  verNegocio (idx:number)
+  {
+    this.router.navigate(['/negocio',idx]);
+    console.log(idx)
+  }
 
 }
