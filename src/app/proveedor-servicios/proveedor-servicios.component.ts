@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormGroup , FormBuilder, Validators} from '@angular/forms';
+import { ProveedorService } from '../services/proveedor.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-proveedor-servicios',
@@ -7,116 +10,76 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProveedorServiciosComponent implements OnInit {
 
+ // rolList=["Encargado","Cajero","Cocinero","Camarero"]
 
-  constructor() { }
+  provServicioForm ! : FormGroup;
+  actionBtn : string ="Guardar";
 
-  ngOnInit(): void {
-
-  }
-
-
-
-
-}
-
-
-/*import { Component, OnInit , ViewChild} from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
-import { EmplService } from '../services/empl.service';
-
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-
-
-@Component({
-  selector: 'app-empleados',
-  templateUrl: './empleados.component.html',
-  styleUrls: ['./empleados.component.sass']
-})
-export class EmpleadosComponent implements OnInit {
-
-
-  displayedColumns: string[] = ['nombre', 'apellido', 'telefono', 'rol','acciones'];
-  dataSource!: MatTableDataSource<any>;
-
-
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
-  constructor( private dialog :MatDialog, private emp : EmplService) { }
+  constructor(private formBuilder : FormBuilder ,
+    private provServicio : ProveedorService,
+    @Inject(MAT_DIALOG_DATA) public editData : any,
+    private proveedorServiciosRef : MatDialogRef<ProveedorServiciosComponent>) { }
 
   ngOnInit(): void {
+    this.provServicioForm = this.formBuilder.group({
 
-    this.getAllEmpleados();
+      tipo: ['',Validators.required],
+      nombre: ['',Validators.required],
+      monto: ['',Validators.required],
+      fecha_inicio: ['',Validators.required],
+      fecha_final: ['',Validators.required],
+      codigo_contrato: ['',Validators.required],
+
+    });
+
+    //console.log(this.editData);
+    if(this.editData){
+      this.actionBtn = "Update";
+      this.provServicioForm.controls['tipo'].setValue(this.editData.tipo);
+      this.provServicioForm.controls['nombre'].setValue(this.editData.nombre);
+      this.provServicioForm.controls['monto'].setValue(this.editData.monto);
+      this.provServicioForm.controls['fecha_inicio'].setValue(this.editData.hecha_inicio);
+      this.provServicioForm.controls['fecha_final'].setValue(this.editData.hecha_final);
+      this.provServicioForm.controls['codigo_contrato'].setValue(this.editData.codigo_contrato);
+    }
   }
+    addProveedorServicio(){
+      //console.log(this.empleadoForm.value);
 
-  openDialog() {
-    this.dialog.open(DialogComponent, {
-      width : '30%'
-    }).afterClosed().subscribe(val=>{
-      if(val == 'Guardar'){
-        this.getAllEmpleados();
+      if(!this.editData){
+        if(this.provServicioForm.valid){
+        this.provServicio.postProveedorServicio(this.provServicioForm.value)
+        .subscribe({
+          next :(res)=>{
+            alert("Empleado anadido con exito");
+            this.provServicioForm.reset();
+            this.proveedorServiciosRef.close('Guardar');
+          },
+          error:()=>{
+            alert("Error para anadir un proveedor de servicios")
+          }
+        })
       }
-    })
-  }
 
-  getAllEmpleados(){
-
-    this.emp.getEmpleado()
-    .subscribe({
-      next :(res)=>{
-       // console.log(res);
-       this.dataSource = new MatTableDataSource(res);
-       this.dataSource.paginator = this. paginator;
-       this.dataSource.sort = this.sort;
-      },
-      error:(err) =>{
-        alert("error!")
-
+      } else {
+        this.updateProveedorServicio()
       }
-    })
+
+    }
+
+    updateProveedorServicio(){
+      this.provServicio.putProveedorServicio(this.provServicioForm.value,this.editData.id)
+
+      .subscribe({
+        next : (res)=>{
+          alert("Empleado modificado con éxito");
+        this.provServicioForm.reset
+        this.proveedorServiciosRef.close('update');
+        },
+        error:()=>{
+          alert("Error de modificaciones");
+        }
+      })
+    }
 
   }
-
-  editEmpleado(row : any){
-    this.dialog.open(DialogComponent,{
-      width : '30%',
-      data:row
-    }).afterClosed().subscribe(val=>{
-      if(val ==='update'){
-        this.getAllEmpleados();
-      }
-    })
-  }
-
-  deleteEmpleado(id:number){
-
-    this.emp.deleteEmpleado(id)
-    .subscribe({
-      next:(res)=>{
-        alert("Empleado eliminado")
-      },error:()=>{
-
-        alert("error")
-
-      }
-    })
-
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-  }
-  }
-
-
-
-}
-*/

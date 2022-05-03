@@ -23,6 +23,9 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+
 
 
 import { EmpleadosComponent } from './empleados/empleados.component';
@@ -54,12 +57,9 @@ import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.comp
 import { ChartsModule } from 'ng2-charts';
 import { StatisticsModule } from './statistics/statistics.module';
 import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
-<<<<<<< HEAD
 import { ProveedorServiciosComponent } from './proveedor-servicios/proveedor-servicios.component';
 import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveedor-ingredientes.component';
-=======
 import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.component';
->>>>>>> 46b5706575ba8a4e7c95cfb5caa21400c3fe0469
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +83,7 @@ import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.componen
     ProveedorServiciosComponent,
     ProveedorIngredientesComponent,
     DialogNegocioComponent,
+
 
 
 
@@ -111,8 +112,9 @@ import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.componen
     //MatTableDataSource,
     MatPaginatorModule,
     MatSortModule,
-
-    StatisticsModule
+   MatDatepickerModule,
+   StatisticsModule,
+   MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { ProveedorServiciosComponent } from '../proveedor-servicios/proveedor-servicios.component';
+import { ProveedorIngredientesComponent } from '../proveedor-ingredientes/proveedor-ingredientes.component';
 
 
 @Component({
@@ -23,7 +24,9 @@ export class ProveedoresComponent implements OnInit {
 
 
   displayedColumns: string[] = ['tipo', 'nombre', 'monto', 'fecha_inicio','fecha_final', 'codigo_contrato','acciones'];
+  displayedColumns_ing: string[] = ['nombre_ing', 'cantidad_ing','monto_ing', 'fecha_entrega','acciones_ing'];
   dataSource!: MatTableDataSource<any>;
+  dataSource_ing!: MatTableDataSource<any>;
 
 
 
@@ -47,7 +50,8 @@ export class ProveedoresComponent implements OnInit {
 
     });*/
 
-    this.getAllProveedorServicios
+    this.getAllProveedorServicios;
+    this.getAllProveedorIngredientes;
   }
 
   showProveedorServicios()
@@ -85,6 +89,17 @@ export class ProveedoresComponent implements OnInit {
     })
   }
 
+  openProveedorIngrediente() {
+    this.dialog.open(ProveedorIngredientesComponent, {
+      width : '30%'
+    }).afterClosed().subscribe(val=>{
+      if(val == 'Guardar'){
+        this.getAllProveedorIngredientes();
+      }
+    })
+  }
+
+
   getAllProveedorServicios(){
 
     this.proveedor.getProveedorServicio()
@@ -102,7 +117,23 @@ export class ProveedoresComponent implements OnInit {
     })
 
   }
+  getAllProveedorIngredientes(){
 
+    this.proveedor.getProveedorIngrediente()
+    .subscribe({
+      next :(res)=>{
+       // console.log(res);
+       this.dataSource_ing = new MatTableDataSource(res);
+       this.dataSource_ing.paginator = this. paginator;
+       this.dataSource_ing.sort = this.sort;
+      },
+      error:(err) =>{
+        alert("error!")
+
+      }
+    })
+
+  }
 
   editProveedorServicios(row : any){
     this.dialog.open(ProveedorServiciosComponent,{
@@ -111,6 +142,17 @@ export class ProveedoresComponent implements OnInit {
     }).afterClosed().subscribe(val=>{
       if(val ==='update'){
         this.getAllProveedorServicios();
+      }
+    })
+  }
+
+  editProveedorIngredientes(row : any){
+    this.dialog.open(ProveedorIngredientesComponent,{
+      width : '30%',
+      data:row
+    }).afterClosed().subscribe(val=>{
+      if(val ==='update'){
+        this.getAllProveedorIngredientes();
       }
     })
   }
@@ -129,6 +171,20 @@ export class ProveedoresComponent implements OnInit {
     })
 
   }
+  deleteProveedorIngredientes(id:number){
+
+    this.proveedor.deleteProveedorIngrediente(id)
+    .subscribe({
+      next:(res)=>{
+        alert("Empleado eliminado")
+      },error:()=>{
+
+        alert("error")
+
+      }
+    })
+
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -136,6 +192,15 @@ export class ProveedoresComponent implements OnInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  applyFilterIngredientes(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource_ing.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource_ing.paginator) {
+      this.dataSource_ing.paginator.firstPage();
     }
   }
 }
