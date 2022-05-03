@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder,Validators} from '@angular/forms';
-import { MsService } from '../services/ms.service';
+import { MsService } from '../../../services/ms.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({

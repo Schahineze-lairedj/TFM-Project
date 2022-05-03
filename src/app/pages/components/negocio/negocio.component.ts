@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NegocioService } from '../services/negocio.service';
+import { NegocioService } from '../../../services/negocio.service';
 
 @Component({
   selector: 'app-negocio',
@@ -12,8 +12,8 @@ export class NegocioComponent implements OnInit {
 
   constructor(
     protected route: ActivatedRoute,
-protected negociosService: NegocioService) { 
-   
+protected negociosService: NegocioService) {
+
   }
 
   ngOnInit(): void {

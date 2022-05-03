@@ -1,12 +1,12 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogMComponent } from '../dialog-m/dialog-m.component';
-import { MsService } from '../services/ms.service';
 
 
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { DialogMComponent } from 'src/app/pages/components/mesa-dialog/dialog-m.component';
+import { MsService } from 'src/app/services/ms.service';
 
 
 @Component({
@@ -49,10 +49,6 @@ export class MesasComponent implements OnInit {
     })
 
   }
-
-
-
-
 
   openDialogm() {
     this.dialogm.open(DialogMComponent, {

@@ -4,14 +4,12 @@ import { Router } from '@angular/router';
 //import { FormGroup , FormBuilder,FormControl, Validators} from '@angular/forms';
 //import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { ProveedorService } from '../services/proveedor.service';
-
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
 import { ProveedorServiciosComponent } from '../proveedor-servicios/proveedor-servicios.component';
+import { ProveedorService } from 'src/app/services/proveedor.service';
 
 
 @Component({

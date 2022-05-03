@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder, Validators} from '@angular/forms';
 
 
-import { NegocioService } from '../services/negocio.service';
+import { NegocioService } from '../../../services/negocio.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({

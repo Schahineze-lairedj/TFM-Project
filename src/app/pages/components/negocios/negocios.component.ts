@@ -1,13 +1,13 @@
 import { Component, OnInit , ViewChild} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogNegocioComponent } from '../dialog-negocio/dialog-negocio.component';
 import { Router } from '@angular/router';
 
 
-import { NegocioService } from '../services/negocio.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { NegocioService } from 'src/app/services/negocio.service';
+import { DialogNegocioComponent } from 'src/app/pages/components/negocio-dialog/dialog-negocio.component';
 
 @Component({
   selector: 'app-negocios',
@@ -23,7 +23,7 @@ export class NegociosComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private dialog :MatDialog, private neg : NegocioService, private router : Router) { }
-  
+
   ngOnInit(): void {
     this.getAllNegocios();
   }

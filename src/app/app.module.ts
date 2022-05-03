@@ -24,40 +24,33 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
 
-
-import { EmpleadosComponent } from './empleados/empleados.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from './pages/components/empleado-dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NegociosComponent } from './negocios/negocios.component';
-import { NegocioComponent } from './negocio/negocio.component';
-import { EmpleadoComponent } from './empleado/empleado.component';
-import { MesasComponent } from './mesas/mesas.component';
-import { MesaComponent } from './mesa/mesa.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
-import { PedidoComponent } from './pedido/pedido.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { NegocioComponent } from './pages/components/negocio/negocio.component';
+import { EmpleadoComponent } from './pages/components/empleado/empleado.component';
+import { PedidoComponent } from './pages/components/pedido/pedido.component';
 import { CajasComponent } from './cajas/cajas.component';
 import { CajaComponent } from './caja/caja.component';
-import { ProveedoresComponent } from './proveedores/proveedores.component';
-import { ProveedorComponent } from './proveedor/proveedor.component';
-import { InventariosComponent } from './inventarios/inventarios.component';
-import { InventarioComponent } from './inventario/inventario.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
-import { StatsComponent } from './statistics/panel/stats.component';
-import { LineChartComponent } from './stats-charts/line-chart/line-chart.component';
-import { BarChartComponent } from './stats-charts/bar-chart/bar-chart.component';
-import { DoughnutChartComponent } from './stats-charts/doughnut-chart/doughnut-chart.component';
-import { RadarChartComponent } from './stats-charts/radar-chart/radar-chart.component';
 import { ChartsModule } from 'ng2-charts';
-import { StatisticsModule } from './statistics/statistics.module';
-import { BubbleChartComponent } from './stats-charts/bubble-chart/bubble-chart.component';
-import { ProveedorServiciosComponent } from './proveedor-servicios/proveedor-servicios.component';
-import { ProveedorIngredientesComponent } from './proveedor-ingredientes/proveedor-ingredientes.component';
-import { DialogNegocioComponent } from './dialog-negocio/dialog-negocio.component';
-import { DialogMComponent } from './dialog-m/dialog-m.component';
+import { DialogNegocioComponent } from './pages/components/negocio-dialog/dialog-negocio.component';
+import { DialogMComponent } from './pages/components/mesa-dialog/dialog-m.component';
+import { EmpleadosComponent } from './pages/components/empleados/empleados.component';
+import { NegociosComponent } from './pages/components/negocios/negocios.component';
+import { MesasComponent } from './pages/components/mesas/mesas.component';
+import { MesaComponent } from './pages/components/mesa/mesa.component';
+import { PedidosComponent } from './pages/components/pedidos/pedidos.component';
+import { ProveedoresComponent } from './pages/components/proveedores/proveedores.component';
+import { ProveedorComponent } from './pages/components/proveedor/proveedor.component';
+import { InventariosComponent } from './pages/components/inventarios/inventarios.component';
+import { ProveedorServiciosComponent } from './pages/components/proveedor-servicios/proveedor-servicios.component';
+import { InventarioComponent } from './pages/components/inventario/inventario.component';
+import { ProveedorIngredientesComponent } from './pages/components/proveedor-ingredientes/proveedor-ingredientes.component';
+import { StatisticsModule } from './modules/statistics/statistics.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,8 +75,6 @@ import { DialogMComponent } from './dialog-m/dialog-m.component';
     ProveedorIngredientesComponent,
     DialogNegocioComponent,
     DialogMComponent,
-
-
 
   ],
   imports: [
