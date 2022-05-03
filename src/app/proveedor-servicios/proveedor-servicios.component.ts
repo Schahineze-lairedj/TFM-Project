@@ -113,7 +113,7 @@ export class EmpleadosComponent implements OnInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
-    }
+  }
   }
 
 
