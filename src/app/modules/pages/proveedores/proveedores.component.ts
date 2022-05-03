@@ -9,11 +9,8 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ProveedorServiciosComponent } from '../proveedor-servicios/proveedor-servicios.component';
-<<<<<<< HEAD:src/app/proveedores/proveedores.component.ts
 import { ProveedorIngredientesComponent } from '../proveedor-ingredientes/proveedor-ingredientes.component';
-=======
 import { ProveedorService } from 'src/app/services/proveedor.service';
->>>>>>> bf3af87f9b819ccd2b5e6484d4ade23c3902f04c:src/app/modules/pages/proveedores/proveedores.component.ts
 
 
 @Component({
