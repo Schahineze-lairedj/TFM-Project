@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from './pages/components/empleado-dialog/dialog.component';
-
 
 
 @Component({
