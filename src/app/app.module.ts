@@ -55,6 +55,7 @@ import { ProveedorServiciosComponent } from './modules/pages/proveedor-servicios
 import { ProveedorIngredientesComponent } from './modules/pages/proveedor-ingredientes/proveedor-ingredientes.component';
 import { DialogNegocioComponent } from './modules/pages/negocio-dialog/dialog-negocio.component';
 import { DialogMComponent } from './modules/pages/mesa-dialog/dialog-m.component';
+import { PlatoComponent } from './modules/pages/plato/plato.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { DialogMComponent } from './modules/pages/mesa-dialog/dialog-m.component
     ProveedorIngredientesComponent,
     DialogNegocioComponent,
     DialogMComponent,
+    PlatoComponent,
 
   ],
   imports: [
