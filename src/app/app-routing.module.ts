@@ -59,6 +59,7 @@ const routes: Routes = [
 {path:'proveedor-servicios',component:ProveedorServiciosComponent},
 {path: 'negocio/:id',component: NegocioComponent},
 {path: 'plato',component:PlatoComponent},
+
 ];
 
 @NgModule({
