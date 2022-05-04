@@ -23,6 +23,7 @@ import { InventarioComponent } from './modules/pages/inventario/inventario.compo
 import { DialogComponent } from './modules/pages/empleado-dialog/dialog.component';
 import { ProveedorIngredientesComponent } from './modules/pages/proveedor-ingredientes/proveedor-ingredientes.component';
 import { ProveedorServiciosComponent } from './modules/pages/proveedor-servicios/proveedor-servicios.component';
+import { PlatoComponent } from './modules/pages/plato/plato.component';
 const routes: Routes = [
 {path:'',redirectTo: 'estadisticas', pathMatch: 'full'},
 {path:'estadisticas',component:StatsComponent},
@@ -57,6 +58,7 @@ const routes: Routes = [
 {path:'proveedor-ingredientes',component:ProveedorIngredientesComponent},
 {path:'proveedor-servicios',component:ProveedorServiciosComponent},
 {path: 'negocio/:id',component: NegocioComponent},
+{path: 'plato',component:PlatoComponent},
 ];
 
 @NgModule({
