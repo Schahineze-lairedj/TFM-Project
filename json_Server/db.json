@@ -74,6 +74,12 @@
       "cantidadPersonas": 3,
       "estado": "Ocupada",
       "id": 5
+    },
+    {
+      "numeroMesa": 6,
+      "cantidadPersonas": 2,
+      "estado": "Ocupada",
+      "id": 6
     }
   ],
   "comments": [
